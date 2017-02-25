@@ -1,3 +1,13 @@
+/**
+* Gmail automation tools
+*
+* Automates reminders (AKA "any news?")
+* Automates sending drafts after specific interval (AKA "write me in 2 weeks")
+*
+* @autor Eugene Bond <eugene.bond@gmail.com>
+* @copyright Eugene Bond
+*/
+
 // the label which is a trigger of sending autoreminders
 var reminderTriggerLabel = "autoreminder";
 
