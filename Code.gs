@@ -177,18 +177,32 @@ function checkForTimeLabels(thread) {
 function sendReminder(thread) {
   var lastMessage = thread.getMessages()[thread.getMessageCount()-1];
   
-  var firstTo = lastMessage.getTo().split(';')[0];
-  
+  var allTo = [lastMessage.getTo(), lastMessage.getFrom(), lastMessage.getCc()].join(',').split(',');
+  Logger.log("All recepients: " + allTo);
   var firstName = '';
   
-  var firstSplit = firstTo.split(" <");
-  if (firstSplit.length > 1) {
-    var fullName = firstSplit[0].replace('"', '');
-    var splitName = fullName.split(" ");
-    if (splitName.length > 1) {
-      firstName = splitName[0];
+  for (var i in allTo) {
+    
+    var firstSplit = allTo[i].split(" <");
+    if (firstSplit.length > 1) {
+      
+      // skipping ourselves
+      if (firstSplit[1] == Session.getActiveUser().getEmail() + ">") {
+        Logger.log("Skipping " + firstSplit[1]);
+        continue;
+      }
+      
+      var fullName = firstSplit[0].replace('"', '');
+      var splitName = fullName.split(" ");
+      if (splitName.length > 1) {
+        firstName = splitName[0];
+        break;
+      }
     }
+    
   }
+  
+  Logger.log("Fetched name: " + firstName);
   
   var content = _getRandomFromArray(emailTemplates.hello) + "\n\n" + _getRandomFromArray(emailTemplates.text) + "\n\n\n" + _getRandomFromArray(emailTemplates.goodbye) + "\n" + _getRandomFromArray(emailTemplates.name);
                     
