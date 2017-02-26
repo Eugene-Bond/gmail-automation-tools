@@ -119,6 +119,12 @@ function processPostponed() {
     
     var thread = GmailApp.getThreadById(drafts.drafts[i].message.threadId);
     
+    // skip drafts with unread messages in the thread
+    if (thread.isUnread()) {
+      Logger.log(draft.getSubject() + " has unread replies. Skipping..");
+      continue;
+    }
+    
     var label = checkForTimeLabels(thread);
     
     if (label) {
