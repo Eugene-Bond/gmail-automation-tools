@@ -70,16 +70,18 @@ Time interval labels
 ------
 The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations) for durations format is supported.
 >Durations are represented by the format P[n]Y[n]M[n]DT[n]H[n]M[n]S or P[n]W as shown to the right. In these representations, the [n] is replaced by the value for each of the date and time elements that follow the [n]. Leading zeros are not required, but the maximum number of digits for each element should be agreed to by the communicating parties. The capital letters P, Y, M, W, D, T, H, M, and S are designators for each of the date and time elements and are not replaced.
->
-> P is the duration designator (for period) placed at the start of the duration representation.
-> Y is the year designator that follows the value for the number of years.
-> M is the month designator that follows the value for the number of months.
-> W is the week designator that follows the value for the number of weeks.
-> D is the day designator that follows the value for the number of days.
-> T is the time designator that precedes the time components of the representation.
-> H is the hour designator that follows the value for the number of hours.
-> M is the minute designator that follows the value for the number of minutes.
-> S is the second designator that follows the value for the number of seconds.
+```
+P is the duration designator (for period) placed at the start of the duration representation.
+Y is the year designator that follows the value for the number of years.
+M is the month designator that follows the value for the number of months.
+W is the week designator that follows the value for the number of weeks.
+D is the day designator that follows the value for the number of days.
+T is the time designator that precedes the time components of the representation.
+H is the hour designator that follows the value for the number of hours.
+M is the minute designator that follows the value for the number of minutes.
+S is the second designator that follows the value for the number of seconds.
+```
+
 The most commonly used labels are:
 - **P1D** - one day (remind/send in one day)
 - **PT6H** - 6 hours (remind/send in 6 hours)
