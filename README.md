@@ -84,10 +84,10 @@ S is the second designator that follows the value for the number of seconds.
 ```
 
 The most commonly used labels are:
-- **P1D** - one day (remind/send in one day)
-- **PT6H** - 6 hours (remind/send in 6 hours)
-- **P1W** - one week (remind/send in one week)
-- **PT10M** - 10 minutes (remind/send in 10 minutes) - for testing purpose only :)
+- **P1D** - one day (remind every day / send in one day)
+- **PT6H** - 6 hours (remind every 6 hours / send in 6 hours)
+- **P1W** - one week (remind every week / send in one week)
+- **PT10M** - 10 minutes (remind every 10 minutes / send in 10 minutes) - for testing purpose only :)
 
 Debugging
 ------
