@@ -30,38 +30,6 @@ var emailTemplates = {
 }
 
 /**
-* Search mailbox for threads matching search criteria
-*
-* @param searchQuery string parameters for the search
-* @return array GmailThread[]
-*/
-function getConversations(searchQuery) {
-  var conversations = GmailApp.search(searchQuery);
-  
-  return conversations;
-}
-
-/**
-* Goes though an array of GmailThread and removes any threads which has unread messages 
-*
-* @param threads array GmailThread[]
-* @return array GmailThread[]
-*/
-function skipUnread(threads) {
-  var result = [];
-  
-  for (var i in threads) {
-    var thread = threads[i];
-    if (thread.isUnread()) {
-      Logger.log("Skipping unread '" + thread.getFirstMessageSubject() + "' on " + thread.getLastMessageDate()); 
-    } else {
-      result.push(thread); 
-    }
-  }
-  return result;
-}
-
-/**
 * Main executor
 *
 * Setup your time-based trigger in Resources -> Current project's triggers and point to this function
@@ -93,7 +61,6 @@ function processReminders() {
      }
   }
 }
-
 
 /**
 * Sends email drafts which are labelled to be sent later
@@ -142,6 +109,38 @@ function processPostponed() {
       }
     }
   }
+}
+
+/**
+* Search mailbox for threads matching search criteria
+*
+* @param searchQuery string parameters for the search
+* @return array GmailThread[]
+*/
+function getConversations(searchQuery) {
+  var conversations = GmailApp.search(searchQuery);
+  
+  return conversations;
+}
+
+/**
+* Goes though an array of GmailThread and removes any threads which has unread messages 
+*
+* @param threads array GmailThread[]
+* @return array GmailThread[]
+*/
+function skipUnread(threads) {
+  var result = [];
+  
+  for (var i in threads) {
+    var thread = threads[i];
+    if (thread.isUnread()) {
+      Logger.log("Skipping unread '" + thread.getFirstMessageSubject() + "' on " + thread.getLastMessageDate()); 
+    } else {
+      result.push(thread); 
+    }
+  }
+  return result;
 }
 
 /**
