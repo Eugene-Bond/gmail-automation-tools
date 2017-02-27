@@ -1,9 +1,11 @@
 # Google Apps Scripts for Gmail automation
 
+Got bored to remind someone about something important for you? Forgetting to follow up on something in time? Let automation do the job and be focused on other stuff!
+
 Intro
 -----
-This is a subset of [Google Apps Scripts](https://developers.google.com/apps-script/) which help to automate some Gmail operations.
-At the moment there the following functions are available:
+This is a set of [Google Apps Scripts](https://developers.google.com/apps-script/) which automates some Gmail operations.
+At the moment the following functions are available:
 - Autoreminder (AKA "do you have any updates for me?")
 - Postponed sending (AKA "please contact me in 1 week")
 
