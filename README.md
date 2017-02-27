@@ -1,6 +1,6 @@
 # Google Apps Scripts for Gmail automation
 
-Got bored to remind someone about something important for you? Forgetting to follow up on something in time? Let automation do the job and be focused on other stuff!
+Got bored reminding someone about something critical for you? Forgot to follow up on something on time? Let the automation to do this job for you and you can focus on other important stuff!
 
 Intro
 -----
