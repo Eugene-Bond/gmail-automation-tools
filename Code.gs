@@ -113,7 +113,7 @@ function processPostponed() {
     
     // skip drafts without recepients
     if (!draft.getTo()) {
-      Logger.log("Ignoring " + draft.getSubject());
+      Logger.log("Ignoring " + (draft.getSubject() || "* no subject *"));
       continue;
     }
     
@@ -135,6 +135,10 @@ function processPostponed() {
       if (message.id) {
         Logger.log("Sent! Removing the label"); 
         thread.removeLabel(label);
+        
+        // Mark sent message as unread to make it more prominent
+        var sent = GmailApp.getMessageById(message.id);
+        sent.markUnread();
       }
     }
   }
