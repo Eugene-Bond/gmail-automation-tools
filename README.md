@@ -53,6 +53,7 @@ If recipient's name can't be guessed, it will be omitted.
 In case of multiple recipients (in To or in CC), the first one excluding an active user will be taken.
 You can extend or modify templates by editing _emailTemplates_ variable.
 
+Autoreminders will be sent every defined time interval until label "autoreminder" is not removed or you've got an answer. 
 Autoreminder wouldn't be sent if there are any unread messages in the conversation.
 
 **Postponed sending**
